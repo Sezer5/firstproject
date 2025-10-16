@@ -1,10 +1,10 @@
 <template>
-  <sezer>
+  <div>
       <h2>Öğrencilerim</h2>
       <ul v-for="student in students" :key="student.name">
         <li>{{student.name}}</li>
       </ul>
-    </sezer>
+    </div>
 </template>
 
 <script>
