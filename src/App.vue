@@ -1,8 +1,10 @@
 <template>
-    <h2>Öğrencilerim</h2>
-    <ul v-for="student in students" :key="student.name">
-      <li>{{student.name}}</li>
-    </ul>
+  <sezer>
+      <h2>Öğrencilerim</h2>
+      <ul v-for="student in students" :key="student.name">
+        <li>{{student.name}}</li>
+      </ul>
+    </sezer>
 </template>
 
 <script>
@@ -18,6 +20,10 @@ export default {
         },
         {
           name:'Seda',
+          phone:'123',
+        },
+         {
+          name:'Kevser',
           phone:'123',
         },
         ]
