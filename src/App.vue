@@ -6,7 +6,7 @@
       </ul>
       
     </div>
-    <Student/>
+    <Student :data="students" name="Can"/>
 </template>
 
 <script>

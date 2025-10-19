@@ -6,29 +6,25 @@
       </ul> -->
       Student Component
       Deneme
+      <ul v-for="student in data" :key="student.name">
+          <li>{{student.name}}</li>
+      </ul>
+      {{name}}
     </div>
 </template>
+
 
 <script>
 
 export default {
   name: 'StudentInformation',
+  props:[
+    'name',
+    'data'
+  ],
   data(){
     return{
-      students:[
-        {
-          name:'Sezer',
-          phone:'123',
-        },
-        {
-          name:'Seda',
-          phone:'123',
-        },
-         {
-          name:'Kevser',
-          phone:'123',
-        },
-        ]
+      
     }
   }
   
