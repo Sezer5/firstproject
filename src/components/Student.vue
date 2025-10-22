@@ -4,12 +4,12 @@
       <ul v-for="student in students" :key="student.name">
         <li>{{student.name}}</li>
       </ul> -->
-      Student Component
-      Deneme
-      <ul v-for="student in data" :key="student.name">
-          <li>{{student.name}}</li>
+     {{name}}  <button @click="toggleDetail()">Bilgileri {{isVisible ? 'Sakla' : 'Göster'}}</button>
+      <ul v-if="isVisible">
+          <li>{{phone}}</li>
+          <li>{{email}}</li>
       </ul>
-      {{name}}
+      
     </div>
 </template>
 
@@ -20,11 +20,17 @@ export default {
   name: 'StudentInformation',
   props:[
     'name',
-    'data'
+    'phone',
+    'email'
   ],
   data(){
     return{
-      
+        isVisible:false,
+    }
+  },
+  methods:{
+    toggleDetail(){
+      this.isVisible=!this.isVisible;
     }
   }
   

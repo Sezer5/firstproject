@@ -1,12 +1,12 @@
 <template>
   <div>
       <h2>Öğrencilerim</h2>
-      <ul v-for="student in students" :key="student.name">
-        <li>{{student.name}}</li>
-      </ul>
       
+      <Student name="Sezer" phone="111" email="sss@hotmail.com" />
+      <Student name="Seda" phone="222" email="sdsd@hotmail.com" />
+      <Student name="Kevser" phone="333" email="kkk@hotmail.com" />
     </div>
-    <Student :data="students" name="Can"/>
+    
 </template>
 
 <script>
@@ -16,20 +16,7 @@ export default {
   components:{Student},
   data(){
     return{
-      students:[
-        {
-          name:'Sezer',
-          phone:'123',
-        },
-        {
-          name:'Seda',
-          phone:'123',
-        },
-         {
-          name:'Kevser',
-          phone:'123',
-        },
-        ]
+      
     }
   }
   
