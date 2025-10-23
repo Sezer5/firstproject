@@ -4,7 +4,9 @@
       <ul v-for="student in students" :key="student.name">
         <li>{{student.name}}</li>
       </ul> -->
-     {{name}}  <button @click="toggleDetail()">Bilgileri {{isVisible ? 'Sakla' : 'Göster'}}</button>
+     {{name}} {{studentIsPassed==='1' ? 'Geçti':'Kaldı'}} 
+     <button @click="toggleDetail()">Bilgileri {{isVisible ? 'Sakla' : 'Göster'}}</button>
+     <button @click="toggleIsPassed()">Öğrenci {{studentIsPassed==='1' ? 'Geçti' : 'Kaldı'}}</button>
       <ul v-if="isVisible">
           <li>{{phone}}</li>
           <li>{{email}}</li>
@@ -21,17 +23,26 @@ export default {
   props:[
     'name',
     'phone',
-    'email'
+    'email',
+    'isPassed'
   ],
   data(){
     return{
         isVisible:false,
+        studentIsPassed:this.isPassed,
     }
   },
   methods:{
     toggleDetail(){
       this.isVisible=!this.isVisible;
-    }
+    },
+    toggleIsPassed(){
+      if(this.studentIsPassed==='1'){
+          this.studentIsPassed='0';
+      }else{
+        this.studentIsPassed='1';
+      }
+    },
   }
   
 }
