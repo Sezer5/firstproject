@@ -4,7 +4,7 @@
       <ul v-for="student in students" :key="student.name">
         <li>{{student.name}}</li>
       </ul> -->
-     {{name}} {{studentIsPassed===true ? 'Geçti':'Kaldı'}} 
+     {{name}} {{isPassed===true ? 'Geçti':'Kaldı'}} 
      <button @click="toggleDetail()">Bilgileri {{isVisible ? 'Sakla' : 'Göster'}}</button>
      <button @click="toggleIsPassed()">Öğrenci {{studentIsPassed===true ? 'Geçti' : 'Kaldı'}}</button>
       <ul v-if="isVisible">
@@ -20,6 +20,7 @@
 
 export default {
   name: 'StudentInformation',
+  emits:["toggleStudentIsPassed"],
   // props:[
   //   'name',
   //   'phone',
@@ -27,6 +28,10 @@ export default {
   //   'isPassed'
   // ],
   props:{
+    id:{
+      type:String,
+      required:true,
+    },
     name:{
       type:String,
       required:true,
@@ -51,7 +56,7 @@ export default {
   data(){
     return{
         isVisible:false,
-        studentIsPassed:this.isPassed,
+        // studentIsPassed:this.isPassed,
     }
   },
   methods:{
@@ -60,8 +65,8 @@ export default {
     },
     toggleIsPassed(){
       
-      this.studentIsPassed= !this.studentIsPassed;
-     
+      // this.studentIsPassed= !this.studentIsPassed;
+      this.$emit('toggleStudentIsPassed',this.id)
         
     },
   }

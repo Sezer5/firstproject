@@ -2,7 +2,9 @@
   <div>
       <h2>Öğrencilerim</h2>
       
-      <Student v-for="student in students" :key="student.id" :name="student.name" :phone="student.phone" :email="student.email" :isPassed="student.isPassed"/>
+      <Student v-for="student in students" :key="student.id" :id="student.id" :name="student.name" :phone="student.phone" :email="student.email" :isPassed="student.isPassed"
+        @toggleStudentIsPassed="toogleStudentstatus"
+      />
       
     </div>
     
@@ -40,8 +42,15 @@ export default {
 
       ]
     }
-  }
-  
+    
+  },
+  methods:{
+      toogleStudentstatus(studentId){
+          console.log(studentId);
+          const myStudent = this.students.find((student)=>student.id === studentId);
+          myStudent.isPassed=!myStudent.isPassed;
+      },
+    }
 }
 </script>
 
