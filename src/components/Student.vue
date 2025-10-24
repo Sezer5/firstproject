@@ -20,12 +20,34 @@
 
 export default {
   name: 'StudentInformation',
-  props:[
-    'name',
-    'phone',
-    'email',
-    'isPassed'
-  ],
+  // props:[
+  //   'name',
+  //   'phone',
+  //   'email',
+  //   'isPassed'
+  // ],
+  props:{
+    name:{
+      type:String,
+      required:true,
+    },
+    phone:{
+      type:String,
+      required:true,
+    },
+    email:{
+      type:String,
+      required:true,
+    },
+    isPassed:{
+      type:String,
+      required:false,
+      default:'0',
+      validator:function(value){
+        return value === '1' || value==='0'
+      }
+    }
+  },  
   data(){
     return{
         isVisible:false,
