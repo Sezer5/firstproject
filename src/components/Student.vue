@@ -4,9 +4,9 @@
       <ul v-for="student in students" :key="student.name">
         <li>{{student.name}}</li>
       </ul> -->
-     {{name}} {{studentIsPassed==='1' ? 'Geçti':'Kaldı'}} 
+     {{name}} {{studentIsPassed===true ? 'Geçti':'Kaldı'}} 
      <button @click="toggleDetail()">Bilgileri {{isVisible ? 'Sakla' : 'Göster'}}</button>
-     <button @click="toggleIsPassed()">Öğrenci {{studentIsPassed==='1' ? 'Geçti' : 'Kaldı'}}</button>
+     <button @click="toggleIsPassed()">Öğrenci {{studentIsPassed===true ? 'Geçti' : 'Kaldı'}}</button>
       <ul v-if="isVisible">
           <li>{{phone}}</li>
           <li>{{email}}</li>
@@ -40,12 +40,12 @@ export default {
       required:true,
     },
     isPassed:{
-      type:String,
+      type:Boolean,
       required:false,
-      default:'0',
-      validator:function(value){
-        return value === '1' || value==='0'
-      }
+      default:false,
+      // validator:function(value){
+      //   return value === '1' || value==='0'
+      // }
     }
   },  
   data(){
@@ -59,11 +59,10 @@ export default {
       this.isVisible=!this.isVisible;
     },
     toggleIsPassed(){
-      if(this.studentIsPassed==='1'){
-          this.studentIsPassed='0';
-      }else{
-        this.studentIsPassed='1';
-      }
+      
+      this.studentIsPassed= !this.studentIsPassed;
+     
+        
     },
   }
   
