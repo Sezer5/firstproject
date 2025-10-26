@@ -1,5 +1,6 @@
 <template>
   <div>
+      <StudentForm />
       <h2>Öğrencilerim</h2>
       
       <Student v-for="student in students" :key="student.id" :id="student.id" :name="student.name" :phone="student.phone" :email="student.email" :isPassed="student.isPassed"
@@ -11,10 +12,11 @@
 </template>
 
 <script>
-import Student from './components/Student.vue';
+import Student from './components/Student.vue'
+import StudentForm from './components/StudentForm.vue'
 export default {
   name: 'App',
-  components:{Student},
+  components:{Student,StudentForm},
   data(){
     return{
       students:[
