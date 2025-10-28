@@ -6,7 +6,7 @@
       </ul> -->
      {{name}} {{isPassed===true ? 'Geçti':'Kaldı'}} 
      <button @click="toggleDetail()">Bilgileri {{isVisible ? 'Sakla' : 'Göster'}}</button>
-     <button @click="toggleIsPassed()">Öğrenci {{studentIsPassed===true ? 'Geçti' : 'Kaldı'}}</button>
+     <button @click="toggleIsPassed()">Öğrenci {{isPassed===true ? 'Geçti' : 'Kaldı'}}</button>
       <ul v-if="isVisible">
           <li>{{phone}}</li>
           <li>{{email}}</li>

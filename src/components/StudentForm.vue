@@ -1,19 +1,19 @@
 <template>
   <div>
       <form>
-            <div>
+            <div class="formControl">
                 <label>Ad:</label>
                 <input type="text">
             </div>
-            <div>
+            <div class="formControl">
                 <label>Telefon:</label>
                 <input type="tel">
             </div>
-            <div>
+            <div class="formControl">
                 <label>E-mail:</label>
                 <input type="email">
             </div>
-            <div>
+            <div class="formControl">
                 <label>Ders Durumu:</label>
                 <input type="checkbox">
             </div>
