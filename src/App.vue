@@ -1,6 +1,6 @@
 <template>
   <div>
-      <StudentForm />
+      <StudentForm @addStudent="addInformation"/>
       
       <div class="mainContent">
             <h2>Öğrencilerim</h2>
@@ -55,6 +55,17 @@ export default {
           const myStudent = this.students.find((student)=>student.id === studentId);
           myStudent.isPassed=!myStudent.isPassed;
       },
+      addInformation(name,phone,email,isPassed){
+          const newStudentObject = {
+            id:new Date().toISOString(),
+            name:name,
+            phone:phone,
+            email:email,
+            isPassed:isPassed
+          };
+          this.students.push(newStudentObject);
+
+      }
     }
 }
 </script>
